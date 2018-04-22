@@ -41,7 +41,7 @@ void ShowDesktop::executeStart(const QHash<QString, QVariant>& /*attrs*/) {
 void ShowDesktop::executeUpdate(const QHash<QString, QVariant>& /*attrs*/) {}
 
 void ShowDesktop::executeFinish(const QHash<QString, QVariant>& /*attrs*/) {
-    if (!at_start) {
+    if (at_end) {
         showDesktop();
     }
 }

@@ -44,7 +44,7 @@ void RunCommand::executeStart(const QHash<QString, QVariant>& /*attrs*/) {
 void RunCommand::executeUpdate(const QHash<QString, QVariant>& /*attrs*/) {}
 
 void RunCommand::executeFinish(const QHash<QString, QVariant>& /*attrs*/) {
-    if (!at_start) {
+    if (at_end) {
         runCommand();
     }
 }

@@ -41,7 +41,7 @@ void MinimizeWindow::executeStart(const QHash<QString, QVariant>& /*attrs*/) {
 void MinimizeWindow::executeUpdate(const QHash<QString, QVariant>& /*attrs*/) {}
 
 void MinimizeWindow::executeFinish(const QHash<QString, QVariant>& /*attrs*/) {
-    if (!at_start) {
+    if (at_end) {
         minimizeWindow();
     }
 }

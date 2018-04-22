@@ -41,7 +41,7 @@ void MaximizeRestoreWindow::executeStart(const QHash<QString, QVariant>&) {
 void MaximizeRestoreWindow::executeUpdate(const QHash<QString, QVariant>&) {}
 
 void MaximizeRestoreWindow::executeFinish(const QHash<QString, QVariant>&) {
-    if (!at_start) {
+    if (at_end) {
         maximizeRestoreWindow();
     }
 }

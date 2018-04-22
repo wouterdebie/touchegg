@@ -57,7 +57,7 @@ void MouseClick::executeUpdate(const QHash<QString, QVariant>& /*attrs*/) {}
 
 void MouseClick::executeFinish(const QHash<QString, QVariant>& /*attrs*/)
 {
-    if (!at_start) {
+    if (at_end) {
         mouseClick();
     }
 }

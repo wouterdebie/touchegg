@@ -75,10 +75,14 @@ void SendKeys::executeStart(const QHash<QString, QVariant>& /*attrs*/) {
     }
 }
 
-void SendKeys::executeUpdate(const QHash<QString, QVariant>& /*attrs*/) {}
+void SendKeys::executeUpdate(const QHash<QString, QVariant>& /*attrs*/) {
+    if (on_update) {
+        sendKeys();
+    }
+}
 
 void SendKeys::executeFinish(const QHash<QString, QVariant>& /*attrs*/) {
-    if (!at_start) {
+    if (at_end) {
         sendKeys();
     }
 }

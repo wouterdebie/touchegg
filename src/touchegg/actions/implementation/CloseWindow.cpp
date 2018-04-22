@@ -41,7 +41,7 @@ void CloseWindow::executeStart(const QHash<QString, QVariant>& /*attrs*/) {
 void CloseWindow::executeUpdate(const QHash<QString, QVariant>& /*attrs*/) {}
 
 void CloseWindow::executeFinish(const QHash<QString, QVariant>& /*attrs*/) {
-    if (!at_start) {
+    if (at_end) {
         closeWindow();
     }
 }

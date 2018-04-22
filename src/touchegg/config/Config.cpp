@@ -179,7 +179,7 @@ void Config::initConfig(QFile &file)
                         action = actNode.toElement().attribute("type");
                         timing = actNode.toElement().attribute("when");
                         // By default, perform the action at the end. 
-                        if (timing != "AT_START" && timing != "AT_END") {
+                        if (timing != "AT_START" && timing != "AT_END" && timing != "ON_UPDATE") {
                             timing = "AT_END";
                         }
                     }
@@ -347,6 +347,12 @@ QString Config::getAssociatedTiming(const QString &appClass,
     QString globalAllDirectionsKey = "All."
             + GestureTypeEnum::getValue(gestureType) + "."
             + QString::number(numFingers) + ".ALL.timing";
+
+    qDebug() << exactKey;
+    qDebug() << allDirectionsKey;
+    qDebug() << globalExactKey;
+    qDebug() << globalAllDirectionsKey;
+    qDebug() << this->settings;
 
     if (this->settings.contains(exactKey))
         return this->settings.value(exactKey);

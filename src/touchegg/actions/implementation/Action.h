@@ -41,7 +41,9 @@ public:
         : settings(settings),
           window(window) {
 
-        at_start = false;     
+        at_start = false;  
+        at_end = false;
+        on_update = false;   
     }
 
     virtual ~Action() {}
@@ -56,10 +58,16 @@ public:
         : settings(settings),
           window(window) {
     
+        at_start = false;  
+        at_end = false;
+        on_update = false; 
+
         if (timing == "AT_START") {
             at_start = true;
-        } else {
-            at_start = false;
+        } else if (timing == "AT_END"){
+            at_end = true;
+        } else if (timing == "ON_UPDATE"){
+            on_update = true;
         }
     }
 
@@ -95,6 +103,8 @@ protected:
      * Timing information (only applies to certain actions).
      */
     bool at_start;
+    bool at_end;
+    bool on_update;
 
     /**
      * Window on which execute the action.
